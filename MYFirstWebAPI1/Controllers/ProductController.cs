@@ -27,7 +27,12 @@ namespace MYFirstWebAPI1.Controllers
         public Product GetProductById(int id)
         {
             product = productDBEntities.Products.Find(id);
-            return product;
+            if(product!=null)
+            {
+                return product;
+            }
+            return "couldn't find the product";
+            
         }
 
         // This method would the create the product
